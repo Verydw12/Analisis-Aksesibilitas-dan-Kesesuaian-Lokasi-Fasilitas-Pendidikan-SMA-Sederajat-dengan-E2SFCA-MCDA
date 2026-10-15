@@ -21,6 +21,7 @@ Peta web interaktif yang menyajikan tiga hasil analisis spasial pada tingkat des
 .
 ├── README.md                  # identitas dan struktur file (dokumen ini)
 ├── artifact/                  # kode artefak peta web interaktif
+├── dokumentasi/               # penjelasan penelitian
 ├── pemodelan/                 # kode pemodelan E2SFCA, MCDA, dan preprocessing
 └── dataset/                   # data penelitian atau data dummy yang diizinkan untuk dibagikan
 ```
