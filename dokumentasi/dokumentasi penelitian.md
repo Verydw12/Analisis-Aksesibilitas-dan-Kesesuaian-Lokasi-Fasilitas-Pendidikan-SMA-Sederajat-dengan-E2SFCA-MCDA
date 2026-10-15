@@ -35,7 +35,7 @@ Penelitian mengikuti kerangka CRISP-DM (*business understanding*, *data understa
 | Pemrosesan | Python, QGIS, Google Earth Engine (citra Landsat-8) |
 | Waktu tempuh | Matriks ORS (*OpenRouteService Tools*) melalui QGIS |
 | Pemodelan | E2SFCA, Global Moran's I, LISA, Entropi, WSM, WPM, TOPSIS, *overlay* |
-| Antarmuka | *Dashboard* web statis (HTML, CSS, JavaScript), peta [ISI: pustaka peta] |
+| Antarmuka | *Dashboard* web statis (HTML, CSS, JavaScript) |
 | Hosting | Vercel: https://web-skripsi-very.vercel.app/ |
 
 ```
@@ -46,19 +46,26 @@ Data mentah → Prapemrosesan → E2SFCA (indeks aksesibilitas per desa)
 
 ## 3. Data
 
-| No | Analisis | Variabel | Sumber | Tipe |
-|---|---|---|---|---|
-| 1 | Aksesibilitas | Waktu tempuh desa–sekolah | ORS | – |
-| 2 | Aksesibilitas | Populasi penduduk | BPS | – |
-| 3 | Aksesibilitas | Jumlah siswa sekolah | Disdikpora DIY | – |
-| 4 | Aksesibilitas | Titik SMA/SMK/MA | Disdikpora DIY | – |
-| 5 | Kesesuaian lokasi | Kepadatan jaringan jalan | OpenStreetMap | *Benefit* |
-| 6 | Kesesuaian lokasi | Kepadatan penduduk | WorldPop | *Benefit* |
-| 7 | Kesesuaian lokasi | NDVI | Landsat-8 | *Benefit* |
-| 8 | Kesesuaian lokasi | Kemiringan lereng | NASA SRTM/DEMNAS | *Cost* |
-| 9 | Kesesuaian lokasi | Ketinggian | NASA SRTM/DEMNAS | *Cost* |
-| 10 | Kesesuaian lokasi | Jarak kebisingan | POI | *Benefit* |
-| 11 | Kesesuaian lokasi | Jarak sungai | OpenStreetMap | *Benefit* |
+### 3.1 Data Aksesibilitas (E2SFCA)
+
+| No | Variabel | Sumber | Fungsi dalam model |
+|---|---|---|---|
+| 1 | Waktu tempuh desa–sekolah | ORS | Penentuan zona daerah tangkapan |
+| 2 | Populasi penduduk | BPS | Sisi permintaan (*demand*) |
+| 3 | Jumlah siswa sekolah | Disdikpora DIY | Sisi penawaran (*supply*) |
+| 4 | Titik SMA/SMK/MA | Disdikpora DIY | Lokasi sekolah |
+
+### 3.2 Data Kesesuaian Lokasi (MCDA)
+
+| No | Variabel | Sumber | Tipe |
+|---|---|---|---|
+| 1 | Kepadatan jaringan jalan | OpenStreetMap | *Benefit* |
+| 2 | Kepadatan penduduk | WorldPop | *Benefit* |
+| 3 | NDVI | Landsat-8 | *Benefit* |
+| 4 | Kemiringan lereng | NASA SRTM/DEMNAS | *Cost* |
+| 5 | Ketinggian | NASA SRTM/DEMNAS | *Cost* |
+| 6 | Jarak kebisingan | POI | *Benefit* |
+| 7 | Jarak sungai | OpenStreetMap | *Benefit* |
 
 Variabel *benefit* bernilai makin baik jika makin besar, sedangkan variabel *cost* makin baik jika makin kecil. Pemilihan variabel kesesuaian mengacu pada Tebbi dkk. (2025), Meng dkk. (2025), dan Permendikbudristek No. 22 Tahun 2023 tentang standar sarana prasarana (lokasi aman, nyaman, terhindar dari bahaya dan kebisingan).
 
@@ -211,3 +218,5 @@ Menggunakan data penduduk usia 16–18 tahun dari Dukcapil/BPS, memodelkan waktu
 - Gufron, F. M., & Pramana, S. (2026). Spatial accessibility index and health facility location suitability based on POI and machine learning in DIY Province. *Inferensi*, 9(2), 217–228.
 - Martínez-Plumed, F. dkk. (2021). CRISP-DM twenty years later. *IEEE Transactions on Knowledge and Data Engineering*, 33(8), 3048–3061.
 - Permendikbudristek No. 22 Tahun 2023 tentang Standar Sarana dan Prasarana pada PAUD, Jenjang Pendidikan Dasar, dan Menengah.
+
+Daftar pustaka lengkap ada pada makalah seminar proposal skripsi.
