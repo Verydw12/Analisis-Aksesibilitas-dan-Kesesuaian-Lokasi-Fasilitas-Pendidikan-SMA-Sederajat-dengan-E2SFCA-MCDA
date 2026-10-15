@@ -1,0 +1,1 @@
+# analisis-aksesibilitas-kesesuaian-lokasi-sma-e2sfca-mcda
